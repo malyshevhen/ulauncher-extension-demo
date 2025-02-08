@@ -18,12 +18,17 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         items = []
         for i in range(5):
-            items.append(ExtensionResultItem(icon='images/icon.png',
-                                             name='Item %s' % i,
-                                             description='Item description %s' % i,
-                                             on_enter=HideWindowAction()))
+            items.append(
+                ExtensionResultItem(
+                    icon="images/icon.png",
+                    name="Item %s" % i,
+                    description="Item description %s" % i,
+                    on_enter=HideWindowAction(),
+                )
+            )
 
         return RenderResultListAction(items)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     DemoExtension().run()
